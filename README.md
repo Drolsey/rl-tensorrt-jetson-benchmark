@@ -25,6 +25,81 @@ For each environment and precision the experiments measure:
 
 ---
 
+## Results
+
+### Benchmark overview
+
+Mean across 3 seeds; shaded bands show ±1 standard deviation across seeds.
+
+![CartPole-v1 benchmark overview](figures/cartpole_overview.png)
+
+![LunarLander-v3 benchmark overview](figures/lunarlander_overview.png)
+
+### Cross-environment comparison
+
+| Mean latency | FPS per watt |
+|:---:|:---:|
+| ![Latency, CartPole vs LunarLander](figures/latency_cross_env.png) | ![Efficiency, CartPole vs LunarLander](figures/efficiency_cross_env.png) |
+
+<p align="center">
+  <img src="figures/precision_ranking_batch1.png" alt="Latency per precision at batch size 1" width="60%">
+  <br><em>Latency per precision at batch size 1, CartPole vs LunarLander.</em>
+</p>
+
+### Policy fidelity
+
+Action agreement with FP32 and reward degradation relative to FP32, for
+FP16 and INT8 in both environments.
+
+![Policy fidelity comparison](figures/fidelity_comparison.png)
+
+### Statistical significance
+
+|Cohen's d| between precisions for each metric and batch size (CartPole);
+`*` marks p < 0.05 (Welch's t-test, n = 3 seeds per group).
+
+<p align="center">
+  <img src="figures/effect_size_heatmap.png" alt="Effect size heatmap" width="70%">
+</p>
+
+<details>
+<summary><b>CartPole: individual metrics, including the PyTorch CPU baseline</b></summary>
+
+| | |
+|:---:|:---:|
+| ![Mean latency](figures/latency_mean.png) | ![P95 latency](figures/latency_p95.png) |
+| Mean latency | P95 latency |
+| ![Latency distribution](figures/latency_distribution.png) | ![Throughput](figures/throughput.png) |
+| Latency distribution | Throughput |
+| ![Throughput across seeds](figures/throughput_scatter.png) | ![Power](figures/power.png) |
+| Throughput across seeds | Average power |
+| ![Power distribution](figures/power_distribution.png) | ![Energy per sample](figures/energy.png) |
+| Power distribution | Energy per sample |
+| ![FPS per watt](figures/efficiency.png) | |
+| FPS per watt | |
+
+</details>
+
+<details>
+<summary><b>LunarLander: individual metrics</b></summary>
+
+| | |
+|:---:|:---:|
+| ![Mean latency](figures/lunarlander/latency_mean.png) | ![P95 latency](figures/lunarlander/latency_p95.png) |
+| Mean latency | P95 latency |
+| ![Latency distribution](figures/lunarlander/latency_distribution.png) | ![Throughput](figures/lunarlander/throughput.png) |
+| Latency distribution | Throughput |
+| ![Throughput across seeds](figures/lunarlander/throughput_scatter.png) | ![Power](figures/lunarlander/power.png) |
+| Throughput across seeds | Average power |
+| ![Power distribution](figures/lunarlander/power_distribution.png) | ![Energy per sample](figures/lunarlander/energy.png) |
+| Power distribution | Energy per sample |
+| ![FPS per watt](figures/lunarlander/efficiency.png) | |
+| FPS per watt | |
+
+</details>
+
+---
+
 ## Contents
 
 ```
