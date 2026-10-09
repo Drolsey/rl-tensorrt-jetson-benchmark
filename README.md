@@ -352,3 +352,9 @@ nsys profile --output=experiments/nsys/timeline --trace=cuda,nvtx \
   only.
 - Results depend on the Jetson power mode and clock settings in use
   during the runs.
+
+---
+
+## License
+
+Released under the [MIT License](LICENSE).
