@@ -1,0 +1,4 @@
+engine,mean_episode_reward,std_episode_reward,mean_action_agreement,reward_degradation_pct
+FP16,500.0,0.0,0.99994,0.0
+FP32,500.0,0.0,1.0,0.0
+INT8,500.0,0.0,0.9632533333333333,0.0

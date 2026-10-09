@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+env/
+*.trt
+*.engine
+*.cache
+*.onnx
+*.onnx.data
+*.npy
+*.nsys-rep
+*.ncu-rep
+*.sqlite
